@@ -302,3 +302,18 @@ hi def link cBoolean Boolean
 "hi def link cDelimiter Delimiter
 " foldmethod=syntax fix, courtesy of Ivan Freitas
 "hi def link cBraces Delimiter
+""""""""""""liang.feng"""""""""""""""""""""""""
+"highlight Functions 函数类等都高亮
+"""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+""hi cFunctions guifg=#7fd02e cterm=bold ctermfg=yellow
+""syn match cClass "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
+""hi cClass guifg=#7fd02e cterm=bold ctermfg=yellow
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"highlight Functions 只函数名字高亮
+syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
+hi cFunctions gui=NONE ctermfg=131
