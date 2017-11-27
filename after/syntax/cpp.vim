@@ -143,8 +143,8 @@ endif
 
 " Alternative syntax that is used in:
 "  http://www.vim.org/scripts/script.php?script_id=3064
-"syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
-"hi def link cCustomFunc  Function
+syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+hi def link cCustomFunc  Function
 
 " Cluster for all the stdlib functions defined below
 syn cluster cppSTLgroup     contains=cppSTLfunction,cppSTLfunctional,cppSTLconstant,cppSTLnamespace,cppSTLtype,cppSTLexception,cppSTLiterator,cppSTLiterator_tag,cppSTLenum,cppSTLios,cppSTLcast
@@ -2040,7 +2040,11 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "highlight Functions 只函数名字高亮
-syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 ""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
 hi cFunctions gui=NONE ctermfg=131
+hi cUserFunction gui=NONE ctermfg=131
+hi cppSTLfunction gui=NONE ctermfg=131
+hi cppSTLfunctional gui=NONE ctermfg=131
+hi cppSTLconstant gui=NONE ctermfg=131

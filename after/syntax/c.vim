@@ -274,34 +274,34 @@ hi def link cBoolean Boolean
 " -----------------------------------------------------------------------------
 
 " Operators
-"syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
-"syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
-"syn match cOperator	"[.!~*&%<>^|=,+-]"
-"syn match cOperator	"/[^/*=]"me=e-1
-"syn match cOperator	"/$"
-"syn match cOperator "&&\|||"
-"syn match cOperator	"[][]"
+syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
+syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
+syn match cOperator	"[.!~*&%<>^|=,+-]"
+syn match cOperator	"/[^/*=]"me=e-1
+syn match cOperator	"/$"
+syn match cOperator "&&\|||"
+syn match cOperator	"[][]"
 "
 "" Preprocs
-"syn keyword cDefined defined contained containedin=cDefine
-"hi def link cDefined cDefine
+syn keyword cDefined defined contained containedin=cDefine
+hi def link cDefined cDefine
 
 "" Functions
-"syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
-"syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
+syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
 "
-"hi def link cUserFunction cFunction
-"hi def link cUserFunctionPointer cFunction
+hi def link cUserFunction cFunction
+hi def link cUserFunctionPointer cFunction
 "
 "" Delimiters
-"syn match cDelimiter    "[();\\]"
+syn match cDelimiter    "[();\\]"
 "" foldmethod=syntax fix, courtesy of Ivan Freitas
-"syn match cBraces display "[{}]"
+syn match cBraces display "[{}]"
 
 " Links
-"hi def link cDelimiter Delimiter
+hi def link cDelimiter Delimiter
 " foldmethod=syntax fix, courtesy of Ivan Freitas
-"hi def link cBraces Delimiter
+hi def link cBraces Delimiter
 """"""""""""liang.feng"""""""""""""""""""""""""
 "highlight Functions 函数类等都高亮
 """syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
@@ -313,7 +313,8 @@ hi def link cBoolean Boolean
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "highlight Functions 只函数名字高亮
-syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 ""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
 hi cFunctions gui=NONE ctermfg=131
+hi cAnsiFunction gui=NONE ctermfg=131
