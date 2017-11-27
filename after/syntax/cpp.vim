@@ -1677,7 +1677,8 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction path1
     syntax keyword cppSTLfunction path2
     " syntax keyword cppSTLfunction path
-    syntax keyword cppSTLfunction status
+    "liang.feng
+    "syntax keyword cppSTLfunction status
     syntax keyword cppSTLfunction symlink_status
     syntax keyword cppSTLfunction options
     " syntax keyword cppSTLfunction depth
