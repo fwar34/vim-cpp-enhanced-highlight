@@ -1888,7 +1888,8 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLtype negation
 
     " unordered_map, unordered_set, unordered_multimap, unordered_multiset
-    syntax keyword cppSTLtype node_type
+    "liang.feng
+    "syntax keyword cppSTLtype node_type
     syntax keyword cppSTLtype insert_return_type
     syntax keyword cppSTLfunction try_emplace
     syntax keyword cppSTLfunction insert_or_assign
