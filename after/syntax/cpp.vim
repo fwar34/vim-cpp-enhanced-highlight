@@ -1760,7 +1760,8 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction deallocate
     syntax keyword cppSTLfunction construct
     syntax keyword cppSTLfunction destruct
-    syntax keyword cppSTLfunction resource
+    "liang.feng
+    "syntax keyword cppSTLfunction resource
     syntax keyword cppSTLfunction select_on_container_copy_construction
     syntax keyword cppSTLfunction do_allocate
     syntax keyword cppSTLfunction do_deallocate
