@@ -520,7 +520,8 @@ syntax keyword cppSTLfunction srand
 syntax keyword cppSTLfunction sscanf
 syntax keyword cppSTLfunction stable_partition
 syntax keyword cppSTLfunction stable_sort
-syntax keyword cppSTLfunction str
+"liang.feng
+"syntax keyword cppSTLfunction str
 syntax keyword cppSTLfunction strcat
 syntax keyword cppSTLfunction strchr
 syntax keyword cppSTLfunction strcmp
