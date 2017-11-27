@@ -857,7 +857,8 @@ syntax keyword cppSTLconstant WCHAR_MAX
 
 
 if !exists("cpp_no_cpp11")
-    syntax keyword cppSTLconstant nullptr
+    "liang.feng
+    "syntax keyword cppSTLconstant nullptr
 
     " containers (array, vector, list, *map, *set, ...)
     syntax keyword cppSTLtype array
