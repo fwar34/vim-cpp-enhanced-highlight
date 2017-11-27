@@ -1060,7 +1060,8 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype reference_wrapper
     syntax keyword cppSTLfunction bind
     syntax keyword cppSTLfunction mem_fn
-    syntax keyword cppSTLfunction ref cref
+    "liang.feng
+    "syntax keyword cppSTLfunction ref cref
 
     " future
     syntax keyword cppSTLtype future
