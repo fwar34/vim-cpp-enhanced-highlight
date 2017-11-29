@@ -1058,6 +1058,7 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLexception bad_function_call
     "liang.feng
     "syntax keyword cppSTLfunctional function
+    syntax keyword cppSTLtype function
     syntax keyword cppSTLconstant _1 _2 _3 _4 _5 _6 _7 _8 _9
     syntax keyword cppSTLtype hash
     syntax keyword cppSTLtype is_bind_expression
