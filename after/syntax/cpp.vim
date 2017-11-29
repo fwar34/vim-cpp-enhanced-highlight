@@ -245,7 +245,8 @@ syntax keyword cppSTLfunctional unary_function
 syntax keyword cppSTLfunctional unary_negate
 "syntax keyword cppSTLfunction any
 syntax keyword cppSTLfunction append
-syntax keyword cppSTLfunction arg
+"liang.feng
+"syntax keyword cppSTLfunction arg
 syntax keyword cppSTLfunction asctime
 syntax keyword cppSTLfunction asin
 syntax keyword cppSTLfunction assert
@@ -493,7 +494,8 @@ syntax keyword cppSTLfunction round_error
 syntax keyword cppSTLfunction scanf
 syntax keyword cppSTLfunction search
 syntax keyword cppSTLfunction search_n
-syntax keyword cppSTLfunction second
+"liang.feng
+"syntax keyword cppSTLfunction second
 syntax keyword cppSTLfunction seekg
 syntax keyword cppSTLfunction seekp
 syntax keyword cppSTLfunction setbuf
@@ -604,7 +606,8 @@ syntax keyword cppSTLios fixed
 syntax keyword cppSTLios floatfield
 syntax keyword cppSTLios flush
 syntax keyword cppSTLios get_money
-syntax keyword cppSTLios get_time
+"liang.feng
+"syntax keyword cppSTLios get_time
 syntax keyword cppSTLios hex
 syntax keyword cppSTLios hexfloat
 syntax keyword cppSTLios internal
@@ -996,7 +999,8 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype nanoseconds
     syntax keyword cppSTLtype microseconds
     syntax keyword cppSTLtype milliseconds
-    syntax keyword cppSTLtype seconds
+    "liang.feng
+    "syntax keyword cppSTLtype seconds
     syntax keyword cppSTLtype minutes
     syntax keyword cppSTLtype hours
     syntax keyword cppSTLtype treat_as_floating_point
@@ -1052,7 +1056,8 @@ if !exists("cpp_no_cpp11")
 
     " functional
     syntax keyword cppSTLexception bad_function_call
-    syntax keyword cppSTLfunctional function
+    "liang.feng
+    "syntax keyword cppSTLfunctional function
     syntax keyword cppSTLconstant _1 _2 _3 _4 _5 _6 _7 _8 _9
     syntax keyword cppSTLtype hash
     syntax keyword cppSTLtype is_bind_expression
