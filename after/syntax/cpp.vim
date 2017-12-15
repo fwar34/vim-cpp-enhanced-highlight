@@ -325,7 +325,8 @@ syntax keyword cppSTLfunction find_first_of
 syntax keyword cppSTLfunction find_if
 syntax keyword cppSTLfunction find_last_not_of
 syntax keyword cppSTLfunction find_last_of
-syntax keyword cppSTLfunction first
+"liang.feng
+"syntax keyword cppSTLfunction first
 syntax keyword cppSTLfunction flags
 syntax keyword cppSTLfunction flip
 syntax keyword cppSTLfunction floor
