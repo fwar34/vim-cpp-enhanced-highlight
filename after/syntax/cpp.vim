@@ -1625,7 +1625,8 @@ if !exists("cpp_no_cpp17")
     " filesystem
     syntax keyword cppSTLnamespace filesystem
     syntax keyword cppSTLexception filesystem_error
-    syntax keyword cppSTLtype path
+    "liang.feng
+    "syntax keyword cppSTLtype path
     syntax keyword cppSTLtype directory_entry
     syntax keyword cppSTLtype directory_iterator
     syntax keyword cppSTLtype recursive_directory_iterator
