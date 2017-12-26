@@ -1691,7 +1691,8 @@ if !exists("cpp_no_cpp17")
     "liang.feng
     "syntax keyword cppSTLfunction status
     syntax keyword cppSTLfunction symlink_status
-    syntax keyword cppSTLfunction options
+    "liang.feng
+    "syntax keyword cppSTLfunction options
     " syntax keyword cppSTLfunction depth
     syntax keyword cppSTLfunction recursive_pending
     syntax keyword cppSTLfunction disable_recursive_pending
