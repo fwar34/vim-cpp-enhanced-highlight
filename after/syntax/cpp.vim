@@ -473,7 +473,8 @@ syntax keyword cppSTLfunction rdstate
 syntax keyword cppSTLfunction read
 syntax keyword cppSTLfunction real
 syntax keyword cppSTLfunction realloc
-syntax keyword cppSTLfunction remove
+"liang.feng
+"syntax keyword cppSTLfunction remove
 syntax keyword cppSTLfunction remove_copy
 syntax keyword cppSTLfunction remove_copy_if
 syntax keyword cppSTLfunction remove_if
