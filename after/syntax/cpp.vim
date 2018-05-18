@@ -2062,11 +2062,17 @@ endif
 "syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 "syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 ""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
-hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131
-hi cUserFunction gui=NONE guifg=#B5A1FF ctermfg=131
-hi cppSTLfunction gui=NONE guifg=#B5A1FF ctermfg=131
-hi cppSTLfunctional gui=NONE guifg=#B5A1FF ctermfg=131
-hi cppSTLconstant gui=NONE guifg=#B5A1FF ctermfg=131
+"hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131 "紫色
+"hi cUserFunction gui=NONE guifg=#B5A1FF ctermfg=131
+"hi cppSTLfunction gui=NONE guifg=#B5A1FF ctermfg=131
+"hi cppSTLfunctional gui=NONE guifg=#B5A1FF ctermfg=131
+"hi cppSTLconstant gui=NONE guifg=#B5A1FF ctermfg=131
+
+hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
+hi cUserFunction gui=NONE guifg=#af5f87 ctermfg=131
+hi cppSTLfunction gui=NONE guifg=#af5f87 ctermfg=131
+hi cppSTLfunctional gui=NONE guifg=#af5f87 ctermfg=131
+hi cppSTLconstant gui=NONE guifg=#af5f87 ctermfg=131
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "http://www.cppblog.com/tx7do/archive/2010/07/18/120743.html
