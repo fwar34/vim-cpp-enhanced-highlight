@@ -2067,8 +2067,15 @@ endif
 "hi cppSTLfunction gui=NONE guifg=#B5A1FF ctermfg=131
 "hi cppSTLfunctional gui=NONE guifg=#B5A1FF ctermfg=131
 "hi cppSTLconstant gui=NONE guifg=#B5A1FF ctermfg=131
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"hi cUserFunction gui=NONE guifg=#af87af ctermfg=131
+"hi cUserFunction gui=NONE guifg=#df875f ctermfg=131
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 
 hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cUserFunction gui=NONE guifg=#5f875f ctermfg=131
 hi cUserFunction gui=NONE guifg=#af5f87 ctermfg=131
 hi cppSTLfunction gui=NONE guifg=#af5f87 ctermfg=131
 hi cppSTLfunctional gui=NONE guifg=#af5f87 ctermfg=131
