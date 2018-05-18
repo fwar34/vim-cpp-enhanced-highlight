@@ -2062,8 +2062,16 @@ endif
 "syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 "syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 ""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
-hi cFunctions gui=NONE ctermfg=131
-hi cUserFunction gui=NONE ctermfg=131
-hi cppSTLfunction gui=NONE ctermfg=131
-hi cppSTLfunctional gui=NONE ctermfg=131
-hi cppSTLconstant gui=NONE ctermfg=131
+hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131
+hi cUserFunction gui=NONE guifg=#B5A1FF ctermfg=131
+hi cppSTLfunction gui=NONE guifg=#B5A1FF ctermfg=131
+hi cppSTLfunctional gui=NONE guifg=#B5A1FF ctermfg=131
+hi cppSTLconstant gui=NONE guifg=#B5A1FF ctermfg=131
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"http://www.cppblog.com/tx7do/archive/2010/07/18/120743.html
+"syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+"syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+"hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
