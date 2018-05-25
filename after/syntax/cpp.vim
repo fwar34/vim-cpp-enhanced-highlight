@@ -2074,13 +2074,19 @@ endif
 
 
 
-hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
 "hi cUserFunction gui=NONE guifg=#5f875f ctermfg=131
-hi cUserFunction gui=NONE guifg=#af5f87 ctermfg=131
-hi cppSTLfunction gui=NONE guifg=#af5f87 ctermfg=131
-hi cppSTLfunctional gui=NONE guifg=#af5f87 ctermfg=131
-hi cppSTLconstant gui=NONE guifg=#af5f87 ctermfg=131
+"hi cUserFunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cppSTLfunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cppSTLfunctional gui=NONE guifg=#af5f87 ctermfg=131
+"hi cppSTLconstant gui=NONE guifg=#af5f87 ctermfg=131
 
+hi cFunction gui=NONE guifg=#af5f5f ctermfg=131
+"hi cUserFunction gui=NONE guifg=#5f875f ctermfg=131
+hi cUserFunction gui=NONE guifg=#af5f5f ctermfg=131
+hi cppSTLfunction gui=NONE guifg=#af5f5f ctermfg=131
+hi cppSTLfunctional gui=NONE guifg=#af5f5f ctermfg=131
+hi cppSTLconstant gui=NONE guifg=#af5f5f ctermfg=131
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "http://www.cppblog.com/tx7do/archive/2010/07/18/120743.html
 "syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2

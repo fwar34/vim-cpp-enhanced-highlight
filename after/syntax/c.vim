@@ -314,7 +314,8 @@ hi def link cBraces Delimiter
 syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 "hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131 "紫色
-hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
+hi cFunction gui=NONE guifg=#af5f5f ctermfg=131
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "highlight Functions 只函数名字高亮
@@ -324,4 +325,5 @@ hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
 "hi cFunctions gui=NONE ctermfg=131
 "hi cAnsiFunction gui=NONE ctermfg=131
 "hi cAnsiFunction gui=NONE guifg=#B5A1FF ctermfg=131
-hi cAnsiFunction gui=NONE guifg=#af5f87 ctermfg=131
+"hi cAnsiFunction gui=NONE guifg=#af5f87 ctermfg=131
+hi cAnsiFunction gui=NONE guifg=#af5f5f ctermfg=131
