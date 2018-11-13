@@ -19,7 +19,7 @@
 "  Highlight function names.
 " -----------------------------------------------------------------------------
 if !exists('g:cpp_no_function_highlight')
-    syn match    cCustomParen    "(" contains=cParen contains=cCppParen
+    syn match    cCustomParen    transparent "(" contains=cParen contains=cCppParen
     syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen
     hi def link cCustomFunc  Function
 endif
@@ -30,7 +30,7 @@ endif
 if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
     syn match   cCustomDot    "\." contained
     syn match   cCustomPtr    "->" contained
-    syn match   cCustomMemVar "\(\.\|->\)\w\+" contains=cCustomDot,cCustomPtr
+    syn match   cCustomMemVar "\(\.\|->\)\h\w*" contains=cCustomDot,cCustomPtr
     hi def link cCustomMemVar Function
 endif
 
@@ -273,57 +273,31 @@ hi def link cBoolean Boolean
 " -----------------------------------------------------------------------------
 
 " Operators
-syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
-syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
-syn match cOperator	"[.!~*&%<>^|=,+-]"
-syn match cOperator	"/[^/*=]"me=e-1
-syn match cOperator	"/$"
-syn match cOperator "&&\|||"
-syn match cOperator	"[][]"
+"syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
+"syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
+"syn match cOperator	"[.!~*&%<>^|=,+-]"
+"syn match cOperator	"/[^/*=]"me=e-1
+"syn match cOperator	"/$"
+"syn match cOperator "&&\|||"
+"syn match cOperator	"[][]"
 "
 "" Preprocs
-syn keyword cDefined defined contained containedin=cDefine
-hi def link cDefined cDefine
+"syn keyword cDefined defined contained containedin=cDefine
+"hi def link cDefined cDefine
 
 "" Functions
-syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
-syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
+"syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+"syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
 "
-hi def link cUserFunction cFunction
-hi def link cUserFunctionPointer cFunction
+"hi def link cUserFunction cFunction
+"hi def link cUserFunctionPointer cFunction
 "
 "" Delimiters
-syn match cDelimiter    "[();\\]"
+"syn match cDelimiter    "[();\\]"
 "" foldmethod=syntax fix, courtesy of Ivan Freitas
-syn match cBraces display "[{}]"
+"syn match cBraces display "[{}]"
 
 " Links
-hi def link cDelimiter Delimiter
+"hi def link cDelimiter Delimiter
 " foldmethod=syntax fix, courtesy of Ivan Freitas
-hi def link cBraces Delimiter
-""""""""""""liang.feng"""""""""""""""""""""""""
-"highlight Functions 函数类等都高亮
-"""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-""hi cFunctions guifg=#7fd02e cterm=bold ctermfg=yellow
-""syn match cClass "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
-""hi cClass guifg=#7fd02e cterm=bold ctermfg=yellow
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"http://www.cppblog.com/tx7do/archive/2010/07/18/120743.html
-syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-"hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131 "紫色
-"hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
-hi cFunction gui=NONE guifg=#af5f5f ctermfg=131
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"highlight Functions 只函数名字高亮
-"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
-"hi cFunctions gui=NONE ctermfg=131
-"hi cAnsiFunction gui=NONE ctermfg=131
-"hi cAnsiFunction gui=NONE guifg=#B5A1FF ctermfg=131
-"hi cAnsiFunction gui=NONE guifg=#af5f87 ctermfg=131
-hi cAnsiFunction gui=NONE guifg=#af5f5f ctermfg=131
+"hi def link cBraces Delimiter

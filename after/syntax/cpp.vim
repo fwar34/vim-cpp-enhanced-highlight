@@ -2,7 +2,7 @@
 " Language: C++ Additions
 " Maintainer: Jon Haggblad <jon@haeggblad.com>
 " URL: http://www.haeggblad.com
-" Last Change: 12 Oct 2016
+" Last Change: 1 Feb 2018
 " Version: 0.6
 " Changelog:
 "   0.1 - initial version.
@@ -35,7 +35,7 @@
 
 " Functions
 if !exists('g:cpp_no_function_highlight')
-    syn match   cCustomParen    "(" contains=cParen contains=cCppParen
+    syn match   cCustomParen    transparent "(" contains=cParen contains=cCppParen
     syn match   cCustomFunc     "\w\+\s*(\@="
     hi def link cCustomFunc  Function
 endif
@@ -45,8 +45,7 @@ if exists('g:cpp_class_scope_highlight') && g:cpp_class_scope_highlight
     syn match   cCustomScope    "::"
     syn match   cCustomClass    "\w\+\s*::"
                 \ contains=cCustomScope
-    hi def link cCustomClass Constant
-    "hi def link cCustomClass Function
+    hi def link cCustomClass Function
 endif
 
 " Clear cppStructure and replace "class" and/or "template" with matches
@@ -93,8 +92,7 @@ if exists('g:cpp_class_decl_highlight') && g:cpp_class_decl_highlight
 				\ contains=cCustomAccessKey
 	syn match cCustomClassName "\<protected\_s\+\w\+\>"
 				\ contains=cCustomAccessKey
-	hi def link cCustomClassName Constant
-	"hi def link cCustomClassName Function
+	hi def link cCustomClassName Function
 endif
 " Template functions.
 " Naive implementation that sorta works in most cases. Should correctly
@@ -145,8 +143,8 @@ endif
 
 " Alternative syntax that is used in:
 "  http://www.vim.org/scripts/script.php?script_id=3064
-syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
-hi def link cCustomFunc  Function
+"syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+"hi def link cCustomFunc  Function
 
 " Cluster for all the stdlib functions defined below
 syn cluster cppSTLgroup     contains=cppSTLfunction,cppSTLfunctional,cppSTLconstant,cppSTLnamespace,cppSTLtype,cppSTLexception,cppSTLiterator,cppSTLiterator_tag,cppSTLenum,cppSTLios,cppSTLcast
@@ -247,8 +245,7 @@ syntax keyword cppSTLfunctional unary_function
 syntax keyword cppSTLfunctional unary_negate
 "syntax keyword cppSTLfunction any
 syntax keyword cppSTLfunction append
-"liang.feng
-"syntax keyword cppSTLfunction arg
+syntax keyword cppSTLfunction arg
 syntax keyword cppSTLfunction asctime
 syntax keyword cppSTLfunction asin
 syntax keyword cppSTLfunction assert
@@ -288,8 +285,7 @@ syntax keyword cppSTLfunction copy
 syntax keyword cppSTLfunction copy_backward
 syntax keyword cppSTLfunction cos
 syntax keyword cppSTLfunction cosh
-"liang.feng
-"syntax keyword cppSTLfunction count
+syntax keyword cppSTLfunction count
 syntax keyword cppSTLfunction count_if
 syntax keyword cppSTLfunction c_str
 syntax keyword cppSTLfunction ctime
@@ -327,8 +323,7 @@ syntax keyword cppSTLfunction find_first_of
 syntax keyword cppSTLfunction find_if
 syntax keyword cppSTLfunction find_last_not_of
 syntax keyword cppSTLfunction find_last_of
-"liang.feng
-"syntax keyword cppSTLfunction first
+syntax keyword cppSTLfunction first
 syntax keyword cppSTLfunction flags
 syntax keyword cppSTLfunction flip
 syntax keyword cppSTLfunction floor
@@ -473,8 +468,7 @@ syntax keyword cppSTLfunction rdstate
 syntax keyword cppSTLfunction read
 syntax keyword cppSTLfunction real
 syntax keyword cppSTLfunction realloc
-"liang.feng
-"syntax keyword cppSTLfunction remove
+syntax keyword cppSTLfunction remove
 syntax keyword cppSTLfunction remove_copy
 syntax keyword cppSTLfunction remove_copy_if
 syntax keyword cppSTLfunction remove_if
@@ -498,8 +492,7 @@ syntax keyword cppSTLfunction round_error
 syntax keyword cppSTLfunction scanf
 syntax keyword cppSTLfunction search
 syntax keyword cppSTLfunction search_n
-"liang.feng
-"syntax keyword cppSTLfunction second
+syntax keyword cppSTLfunction second
 syntax keyword cppSTLfunction seekg
 syntax keyword cppSTLfunction seekp
 syntax keyword cppSTLfunction setbuf
@@ -526,8 +519,7 @@ syntax keyword cppSTLfunction srand
 syntax keyword cppSTLfunction sscanf
 syntax keyword cppSTLfunction stable_partition
 syntax keyword cppSTLfunction stable_sort
-"liang.feng
-"syntax keyword cppSTLfunction str
+syntax keyword cppSTLfunction str
 syntax keyword cppSTLfunction strcat
 syntax keyword cppSTLfunction strchr
 syntax keyword cppSTLfunction strcmp
@@ -610,8 +602,7 @@ syntax keyword cppSTLios fixed
 syntax keyword cppSTLios floatfield
 syntax keyword cppSTLios flush
 syntax keyword cppSTLios get_money
-"liang.feng
-"syntax keyword cppSTLios get_time
+syntax keyword cppSTLios get_time
 syntax keyword cppSTLios hex
 syntax keyword cppSTLios hexfloat
 syntax keyword cppSTLios internal
@@ -862,10 +853,40 @@ syntax keyword cppSTLconstant WEOF
 syntax keyword cppSTLconstant WCHAR_MIN
 syntax keyword cppSTLconstant WCHAR_MAX
 
+" locale
+syntax keyword cppSTLtype locale
+syntax keyword cppSTLtype ctype_base
+syntax keyword cppSTLtype codecvt_base
+syntax keyword cppSTLtype messages_base
+syntax keyword cppSTLtype time_base
+syntax keyword cppSTLtype money_base
+syntax keyword cppSTLtype ctype
+syntax keyword cppSTLtype codecvt
+syntax keyword cppSTLtype collate
+syntax keyword cppSTLtype messages
+syntax keyword cppSTLtype time_get
+syntax keyword cppSTLtype time_put
+syntax keyword cppSTLtype num_get
+syntax keyword cppSTLtype num_put
+syntax keyword cppSTLtype numpunct
+syntax keyword cppSTLtype money_get
+syntax keyword cppSTLtype money_put
+syntax keyword cppSTLtype moneypunct
+syntax keyword cppSTLtype ctype_byname
+syntax keyword cppSTLtype codecvt_byname
+syntax keyword cppSTLtype messages_byname
+syntax keyword cppSTLtype collate_byname
+syntax keyword cppSTLtype time_get_byname
+syntax keyword cppSTLtype time_put_byname
+syntax keyword cppSTLtype numpunct_byname
+syntax keyword cppSTLtype moneypunct_byname
+syntax keyword cppSTLfunction use_facet
+syntax keyword cppSTLfunction has_facet
+syntax keyword cppSTLfunction isspace isblank iscntrl isupper islower isalpha
+syntax keyword cppSTLfunction isdigit ispunct isxdigit isalnum isprint isgraph
 
 if !exists("cpp_no_cpp11")
-    "liang.feng
-    "syntax keyword cppSTLconstant nullptr
+    syntax keyword cppSTLconstant nullptr
 
     " containers (array, vector, list, *map, *set, ...)
     syntax keyword cppSTLtype array
@@ -1003,8 +1024,7 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype nanoseconds
     syntax keyword cppSTLtype microseconds
     syntax keyword cppSTLtype milliseconds
-    "liang.feng
-    "syntax keyword cppSTLtype seconds
+    syntax keyword cppSTLtype seconds
     syntax keyword cppSTLtype minutes
     syntax keyword cppSTLtype hours
     syntax keyword cppSTLtype treat_as_floating_point
@@ -1060,9 +1080,7 @@ if !exists("cpp_no_cpp11")
 
     " functional
     syntax keyword cppSTLexception bad_function_call
-    "liang.feng
-    "syntax keyword cppSTLfunctional function
-    syntax keyword cppSTLtype function
+    syntax keyword cppSTLfunctional function
     syntax keyword cppSTLconstant _1 _2 _3 _4 _5 _6 _7 _8 _9
     syntax keyword cppSTLtype hash
     syntax keyword cppSTLtype is_bind_expression
@@ -1070,8 +1088,7 @@ if !exists("cpp_no_cpp11")
     syntax keyword cppSTLtype reference_wrapper
     syntax keyword cppSTLfunction bind
     syntax keyword cppSTLfunction mem_fn
-    "liang.feng
-    "syntax keyword cppSTLfunction ref cref
+    syntax keyword cppSTLfunction ref cref
 
     " future
     syntax keyword cppSTLtype future
@@ -1629,8 +1646,7 @@ if !exists("cpp_no_cpp17")
     " filesystem
     syntax keyword cppSTLnamespace filesystem
     syntax keyword cppSTLexception filesystem_error
-    "liang.feng
-    "syntax keyword cppSTLtype path
+    syntax keyword cppSTLtype path
     syntax keyword cppSTLtype directory_entry
     syntax keyword cppSTLtype directory_iterator
     syntax keyword cppSTLtype recursive_directory_iterator
@@ -1689,11 +1705,9 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction path1
     syntax keyword cppSTLfunction path2
     " syntax keyword cppSTLfunction path
-    "liang.feng
-    "syntax keyword cppSTLfunction status
+    syntax keyword cppSTLfunction status
     syntax keyword cppSTLfunction symlink_status
-    "liang.feng
-    "syntax keyword cppSTLfunction options
+    syntax keyword cppSTLfunction options
     " syntax keyword cppSTLfunction depth
     syntax keyword cppSTLfunction recursive_pending
     syntax keyword cppSTLfunction disable_recursive_pending
@@ -1775,12 +1789,14 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction deallocate
     syntax keyword cppSTLfunction construct
     syntax keyword cppSTLfunction destruct
-    "liang.feng
-    "syntax keyword cppSTLfunction resource
+    syntax keyword cppSTLfunction resource
     syntax keyword cppSTLfunction select_on_container_copy_construction
     syntax keyword cppSTLfunction do_allocate
     syntax keyword cppSTLfunction do_deallocate
     syntax keyword cppSTLfunction do_is_equal
+
+    " mutex
+    syntax keyword cppSTLtype scoped_lock
 
     " new
     syntax keyword cppSTLconstant hardware_destructive_interference_size
@@ -1820,7 +1836,7 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLbool is_error_code_enum_v
     syntax keyword cppSTLbool is_error_condition_enum_v
 
-    " thread
+    " shared_mutex
     syntax keyword cppSTLtype shared_mutex
 
     " tuple
@@ -1895,6 +1911,16 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLbool conjunction_v
     syntax keyword cppSTLbool disjunction_v
     syntax keyword cppSTLbool negation_v
+    syntax keyword cppSTLbool has_unique_object_representations_v
+    syntax keyword cppSTLbool is_swappable_v
+    syntax keyword cppSTLbool is_swappable_with_v
+    syntax keyword cppSTLbool is_nothrow_swappable_v
+    syntax keyword cppSTLbool is_nothrow_swappable_with_v
+    syntax keyword cppSTLbool is_invocable_v
+    syntax keyword cppSTLbool is_invocable_r_v
+    syntax keyword cppSTLbool is_nothrow_invocable_v
+    syntax keyword cppSTLbool is_nothrow_invocable_r_v
+    syntax keyword cppSTLbool is_aggregate_v
     syntax keyword cppSTLconstant alignment_of_v
     syntax keyword cppSTLconstant rank_v
     syntax keyword cppSTLconstant extent_v
@@ -1904,10 +1930,22 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLtype conjunction
     syntax keyword cppSTLtype disjunction
     syntax keyword cppSTLtype negation
+    syntax keyword cppSTLtype void_t
+    syntax keyword cppSTLtype has_unique_object_representations
+    syntax keyword cppSTLtype is_swappable
+    syntax keyword cppSTLtype is_swappable_with
+    syntax keyword cppSTLtype is_nothrow_swappable
+    syntax keyword cppSTLtype is_nothrow_swappable_with
+    syntax keyword cppSTLtype is_invocable
+    syntax keyword cppSTLtype is_invocable_r
+    syntax keyword cppSTLtype is_nothrow_invocable
+    syntax keyword cppSTLtype is_nothrow_invocable_r
+    syntax keyword cppSTLtype invoke_result
+    syntax keyword cppSTLtype invoke_result_t
+    syntax keyword cppSTLtype is_aggregate
 
     " unordered_map, unordered_set, unordered_multimap, unordered_multiset
-    "liang.feng
-    "syntax keyword cppSTLtype node_type
+    syntax keyword cppSTLtype node_type
     syntax keyword cppSTLtype insert_return_type
     syntax keyword cppSTLfunction try_emplace
     syntax keyword cppSTLfunction insert_or_assign
@@ -1936,6 +1974,12 @@ if !exists("cpp_no_cpp17")
     syntax keyword cppSTLfunction visit
     " syntax keyword cppSTLfunction index
 endif " C++17
+
+
+if !exists("cpp_no_cpp20")
+    " type_traits
+    syntax keyword cppSTLtype remove_cvref remove_cvref_t
+endif
 
 
 if exists('g:cpp_concepts_highlight') && g:cpp_concepts_highlight
@@ -2046,51 +2090,3 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   HiLink cppRawDelimiter    Delimiter
   delcommand HiLink
 endif
-
-
-""""""""""""liang.feng"""""""""""""""""""""""""
-"highlight Functions 函数类等都高亮
-"""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-""syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-""hi cFunctions guifg=#7fd02e cterm=bold ctermfg=yellow
-""syn match cClass "\<[a-zA-Z_][a-zA-Z_0-9]*\>::"me=e-2
-""hi cClass guifg=#7fd02e cterm=bold ctermfg=yellow
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"highlight Functions 只函数名字高亮
-"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-"syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-""hi cFunctions guifg=NONE cterm=bold  ctermfg=blue
-"hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131 "紫色
-"hi cUserFunction gui=NONE guifg=#B5A1FF ctermfg=131
-"hi cppSTLfunction gui=NONE guifg=#B5A1FF ctermfg=131
-"hi cppSTLfunctional gui=NONE guifg=#B5A1FF ctermfg=131
-"hi cppSTLconstant gui=NONE guifg=#B5A1FF ctermfg=131
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"hi cUserFunction gui=NONE guifg=#af87af ctermfg=131
-"hi cUserFunction gui=NONE guifg=#df875f ctermfg=131
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-"hi cFunction gui=NONE guifg=#af5f87 ctermfg=131
-"hi cUserFunction gui=NONE guifg=#5f875f ctermfg=131
-"hi cUserFunction gui=NONE guifg=#af5f87 ctermfg=131
-"hi cppSTLfunction gui=NONE guifg=#af5f87 ctermfg=131
-"hi cppSTLfunctional gui=NONE guifg=#af5f87 ctermfg=131
-"hi cppSTLconstant gui=NONE guifg=#af5f87 ctermfg=131
-
-hi cFunction gui=NONE guifg=#af5f5f ctermfg=131
-"hi cUserFunction gui=NONE guifg=#5f875f ctermfg=131
-hi cUserFunction gui=NONE guifg=#af5f5f ctermfg=131
-hi cppSTLfunction gui=NONE guifg=#af5f5f ctermfg=131
-hi cppSTLfunctional gui=NONE guifg=#af5f5f ctermfg=131
-hi cppSTLconstant gui=NONE guifg=#af5f5f ctermfg=131
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"http://www.cppblog.com/tx7do/archive/2010/07/18/120743.html
-"syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
-"syn match cFunction "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
-"hi cFunction gui=NONE guifg=#B5A1FF ctermfg=131
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
